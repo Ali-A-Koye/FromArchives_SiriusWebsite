@@ -1,0 +1,21 @@
+extends base2
+
+block content
+  -if(!user)
+      .arty-login-area.section-padding-80
+        .container
+          .row.justify-content-center
+            .col-12.col-md-6
+              .login-content
+                .section-heading
+                  h4 Choose Your New Password!
+                  .line
+                form#choosenewpassfew
+                  .form-group(id="eofijweij" data-ssid=`${token}`)
+                    input#newpasswordreset.form-control(type='password' placeholder='Please Enter your New Password')
+                  .form-group
+                    input#confnewpassreset.form-control(type='password' placeholder='Please Confirm Your New Password')
+                  button.btn.arty-btn.w-100.mt-30(type='submit' id="newpasswordBtn") Change Password
+  -else
+    h4.uihiuh=`ops,Please Log Out in order to Set Your New Password ${user.name.split(' ')[0]}!`
+    img#imgo.mx-auto.img-fluid.img-circle.d-block.sss2(src=`/img/bg-img/shoulder.png`)

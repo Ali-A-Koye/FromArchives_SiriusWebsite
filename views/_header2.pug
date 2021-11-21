@@ -1,0 +1,111 @@
+
+.preloader.d-flex.align-items-center.justify-content-center
+  .lds-ellipsis
+    div
+    div
+    div
+    div
+
+header.header-area
+  .top-header-area
+    .container
+      .row.align-items-center
+        .col-12.col-md-6
+          .breaking-news-area.d-flex.align-items-center
+            .news-title
+              p New Topics :
+            #breakingNewsTicker.ticker
+              ul
+                -var x = Posts.length;
+                each val in [x-1,x-2,x-3,x-4]
+                  li
+                    a(href=`/page/${Posts[val].slug}`)=Posts[val].title
+              
+        .col-12.col-md-6
+          .top-meta-data.d-flex.align-items-center.justify-content-end
+
+            .top-social-info
+              a(href='https://www.facebook.com/MRaliamjad' target="_blank")
+                i.fa.fa-facebook
+              a(href='https://twitter.com/ArtyomFasbender' target="_blank")
+                i.fa.fa-twitter
+              a(href='#')
+                i.fa.fa-youtube-play
+            .top-search-area
+              form(action="/results" method='get')
+                input#topSearch(type='search' name='search' onkeyup="showResults(this.value)" placeholder='Search...')
+                button.btn(id="Searchbtnn")
+                  i.fa.fa-search(aria-hidden='true')
+              div(style='position:absolute;padding-top:50px;width:100%;top:-1px;')
+                #search-results.borde
+
+
+            if user
+              a.login-btn(href='/me' id='userPhotoancho')
+                img#userPhoto(alt='User-Photo' src=`/img/users/${user.photo}`)
+            else
+              a.login-btn(href='/login')
+                i.fa.fa-user(aria-hidden='true' id="userPhoto2")
+               
+
+
+
+  #sticker.arty-main-menu
+    .classy-nav-container.breakpoint-off
+      .container
+ 
+        nav#artyNav.classy-navbar.justify-content-between
+ 
+          a.nav-brand(href='/')
+            img(src='/img/core-img/logo.png' alt='logo' width='200px' height='500px')
+          .classy-navbar-toggler
+            span.navbarToggler
+              span
+              span
+              span
+          .classy-menu
+            .classycloseIcon
+              .cross-wrap
+                span.top
+                span.bottom
+
+            .classynav
+              ul
+                li(class=`${requrl=="/"? 'active':''}`)
+                  a(href='/') Home
+                li(class=`${requrl.startsWith("/Posts")? 'active':''}`)
+                  a(href='/Posts') Archives
+                li
+                  a(href='#') Fields
+                  ul.dropdown
+                    li
+                      a(href='/Posts?type=Chemistry') - chemistry
+                    li
+                      a(href='/Posts?type=Physics') - Physics
+                    li
+                      a(href='/Posts?type=Biology') - Biology 
+                    li
+                      a(href='/Posts?type=Geology') - Geology
+                    li
+                      a(href='/Posts?type=Mathematics') - Mathematics
+                    li
+                      a(href='/Posts?type=Computer') - Computer
+                li(class=`${requrl=="/contact"? 'active':''}`)
+                  a(href='/contact') Contact
+                if user
+                  li
+                    a(href='#') Account
+                    ul.dropdown
+                      li
+                        a(href='/me') - Profile
+                      li
+                        a(href='/chat') - Join Global Chat!
+                      li
+                        a(href='/changeinfo') - Change Info 
+                      li
+                        a(href='/changePassword') - Change Password
+                      li
+                        a.nav__el--logout(href='/') - Log out
+                      li
+                        a(href='/deleteMe') - Delete Account
+

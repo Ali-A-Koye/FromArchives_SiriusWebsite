@@ -1,0 +1,20 @@
+extends base2
+
+block content
+    .arty-login-area.section-padding-80
+      .container
+        .row.justify-content-center
+          .col-12.col-md-6
+            .login-content
+              .section-heading
+                h4 Hi , Here you can Change your Password 
+                .line
+              form.ChangingPassword
+                .form-group
+                  input#CurrentPassword.form-control(type='password' placeholder='Please Enter your Current Password')
+                .form-group
+                    input#newPassword.form-control(type='password' placeholder='Please Enter your  new Password')
+                    input#newPasswordConfirm.form-control(type='password' placeholder='Please Confirm your new Password')
+                .form-group
+                  .custom-control.custom-checkbox.mr-sm-2
+                button.btn.arty-btn.w-100.mt-30.buttonSavePass(type='submit') Change Password

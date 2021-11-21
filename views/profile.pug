@@ -1,0 +1,40 @@
+extends base2
+
+block content
+    .container.alfa
+      .row.my-2
+        .col-lg-8.order-lg-2
+          ul.nav.nav-tabs
+            li.nav-item
+              a.nav-link.active(href='' data-target='#profile' data-toggle='tab') Profile
+          .tab-content.py-4
+            #profile.tab-pane.active
+              h5.mb-3 Your Profile
+              .row
+                .col-md-6
+                  a(href='/changeinfo' class='changestuff' title="click to change your name")
+                    h6 Full Name
+                  p
+                    =`${user.name}`
+                  a(href='/changeinfo' class='changestuff' title="click to change your Email")
+                    h6 Email Address
+                  p
+                    =`${user.Email}`
+                  a(href='/changeinfo' class='changestuff' title="click to change your Likes")
+                    h6 Likes?
+                  p
+                    =`${user.likes}`
+                  a(href='/changeinfo' class='changestuff'  title="click to change your Bio")
+                    h6 Bio
+                  p
+                    =`${user.bio}`
+                .col-md-6
+                    img(src=`img/bg-img/arty.png` id="manlooking")
+              h6 Delete account? 
+                a(href="/deleteMe" class="iurhferuih") Click Here!
+            .form-group.row
+        .col-lg-4.order-lg-1.text-center.image
+          #divv
+            a(href='/changeinfo')
+              img#imgo.mx-auto.img-fluid.img-circle.d-block.sss(src=`/img/users/${user.photo}` alt='avatar' title="Profile Picture")
+          #assa

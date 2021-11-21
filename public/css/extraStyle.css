@@ -1,0 +1,464 @@
+.image {
+  padding-top: 3.5%;
+}
+.updateNew {
+  padding: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+.sss {
+  border: 2px solid #000;
+  width: 100%;
+  height: 100%;
+}
+.sss2 {
+  width: 30%;
+  height: 30%;
+}
+.alfa {
+  padding-top: 3%;
+  padding-bottom: 10%;
+}
+#assa {
+  padding: 15%;
+}
+#divv {
+  width: 60%;
+  height: 45%;
+  margin-left: 22%;
+  background-color: #fff;
+  transition: all;
+  transition-duration: 0.5s;
+}
+#divv2 {
+  width: 60%;
+  height: 50%;
+  margin-left: 22%;
+  background-color: #fff;
+  transition: all;
+  transition-duration: 0.5s;
+}
+#divv:hover {
+  border: 5px solid #f8f800;
+}
+#manlooking {
+  width: 100%;
+  height: 100%;
+}
+#loadMore {
+  text-align: center;
+  margin-left: 40%;
+  border: 0.5px solid #fff;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: all;
+  transition-duration: 0.5s;
+}
+#loadMore:hover {
+  background-color: #db4437;
+  color: #fff;
+  border-color: #db4437;
+  border-radius: 0;
+}
+#loadMore2 {
+  text-align: center;
+  border: 0.5px solid #fff;
+  background-color: #fff;
+  transition: all;
+  transition-duration: 0.5s;
+  width: 100%;
+  height: 2%;
+  color: #db4437;
+}
+#loadMore2:hover {
+  background-color: #db4437;
+  color: #fff;
+  border-color: #db4437;
+  border-radius: 0;
+}
+.noresult {
+  text-align: center;
+}
+.xdsdsd {
+  text-align: center;
+  margin-bottom: 20%;
+  margin-top: 8%;
+}
+.iurhferuih {
+  color: #fff;
+}
+.iurhferuih:hover {
+  color: #db4437;
+}
+#message-container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #313638;
+  margin: auto;
+  height: 700px;
+  position: relative;
+}
+#message-cont {
+  width: 75%;
+  max-width: 1200px;
+  background-color: #fff;
+  margin: auto;
+  height: 700px;
+  position: relative;
+}
+#message-cont div {
+  padding: 5px;
+  opacity: 1;
+}
+#message-container div {
+  padding: 5px;
+  opacity: 1;
+}
+#message-container div:nth-child(2n) {
+  background-color: #fff;
+}
+#send-container {
+  bottom: 0;
+  width: 99%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+  padding-bottom: 7px;
+  border: none;
+  background-color: #db4437;
+}
+#message-input {
+  border: 1px solid #db4437;
+  border-bottom: none;
+  font-family: Roboto, sans-serif;
+  flex-grow: 1;
+  height: 50px;
+}
+.h4welcome {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 900;
+  font-family: Roboto, sans-serif;
+  font-size: 70px;
+  transition: all;
+  transition-duration: 0.5s;
+}
+.h5talk {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 50px;
+  font-family: Roboto, sans-serif;
+  transition: all;
+  transition-duration: 0.5s;
+}
+.h6header {
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 32%;
+  font-family: Roboto, sans-serif;
+  transition: all;
+  transition-duration: 0.5s;
+}
+.h4welcome:hover,
+.h5talk:hover {
+  color: #db4437;
+}
+#send-ddcontainer {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  margin-bottom: 10px;
+  padding-bottom: 7px;
+  position: static;
+  border: none;
+  background-color: #000;
+  transition: all;
+  transition-duration: 0.5s;
+}
+#Chatfield {
+  width: 99%;
+  height: 85%;
+  position: absolute;
+  margin-bottom: 20px;
+  padding-bottom: 7px;
+  border: none;
+  background-color: #fff;
+  border: 5px solid #db4437;
+  overflow: auto;
+}
+.topformmessages {
+  position: relative !important;
+  display: flex;
+  height: 45px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  color: #000;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  word-wrap: break-word;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+}
+.youmessages {
+  background-color: #ffd9d9 !important;
+}
+.theymessagess {
+  background-color: #fff !important;
+}
+.middlefu {
+  text-align: center;
+}
+#Wenadiv {
+  height: 100%;
+  border-radius: 50px;
+  padding: 0;
+  width: 4%;
+  float: left;
+  margin-right: 10px;
+}
+#nwsene {
+  color: #000;
+  font-family: Roboto, sans-serif !important;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+#iurhfiuhe {
+  height: 35px;
+  width: 35px;
+  position: relative;
+  margin: 0 !important;
+}
+@media (max-width: 1300px) {
+  #Wenadiv {
+    height: 70%;
+    border-radius: 50px;
+    padding: 0;
+    width: 4%;
+    margin-top: 1%;
+    float: left;
+    margin-right: 10px;
+  }
+  #nwsene {
+    margin-top: 1%;
+    font-size: 12px;
+  }
+  .h5talk {
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .h4welcome {
+    margin-top: 30px;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+    font-size: 50px;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  .h6header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 33%;
+    font-family: Roboto, sans-serif;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  #send-ddcontainer {
+    height: 10%;
+  }
+}
+@media (max-width: 1000px) {
+  #Wenadiv {
+    height: 60%;
+    border-radius: 50px;
+    padding: 0;
+    width: 5%;
+    margin-top: 1.5%;
+    float: left;
+    margin-right: 10px;
+  }
+  #nwsene {
+    margin-top: 1%;
+    font-size: 11px;
+  }
+  .h5talk {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .h4welcome {
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 40px;
+  }
+  .h6header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 33%;
+    font-family: Roboto, sans-serif;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  #send-ddcontainer {
+    height: 10%;
+  }
+  #divv {
+    height: 55%;
+  }
+}
+@media (max-width: 665px) {
+  #Wenadiv {
+    height: 60%;
+    border-radius: 50px;
+    padding: 0;
+    width: 5%;
+    margin-top: 1.5%;
+    float: left;
+    margin-right: 10px;
+  }
+  #nwsene {
+    margin-top: 1%;
+    font-size: 11px;
+  }
+  .h5talk {
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .h4welcome {
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 40px;
+  }
+  .h6header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 33%;
+    font-family: Roboto, sans-serif;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  #send-ddcontainer {
+    height: 10%;
+  }
+  #message-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #313638;
+    margin: auto;
+    height: 700px;
+    position: relative;
+  }
+}
+@media (max-width: 548px) {
+  #Wenadiv {
+    height: 50%;
+    border-radius: 50px;
+    padding: 0;
+    width: 5%;
+    margin-top: 1.5%;
+    float: left;
+    margin-right: 10px;
+  }
+  #nwsene {
+    margin-top: 1%;
+    font-size: 11px;
+  }
+  .h5talk {
+    margin-bottom: 20px;
+    margin-top: 9px;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .h4welcome {
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 35px;
+  }
+  .h6header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 25%;
+    font-family: Roboto, sans-serif;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  #send-ddcontainer {
+    height: 10%;
+  }
+  #message-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #313638;
+    margin: auto;
+    height: 700px;
+    position: relative;
+  }
+  #message-cont {
+    width: 100%;
+    background-color: #fff;
+    margin: auto;
+    height: 600px;
+    position: relative;
+  }
+}
+@media (max-width: 330px) {
+  .btrwnecwo {
+    min-width: 20px;
+  }
+}
+.changestuff h6 {
+  transition: all;
+  transition-duration: 0.5s;
+}
+.changestuff h6:hover {
+  color: #db4437;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+#aliimage {
+  border-radius: 100%;
+  height: 95%;
+}
+#ddddddddd {
+  margin-top: 40%;
+}
+.uihiuh {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 3%;
+  margin-bottom: 50px;
+}
+#Wenadiv2 {
+  cursor: pointer;
+  height: 100%;
+  display: block;
+  width: 100%;
+}
+.refhieu {
+  transition: all;
+  transition-duration: 0.5s;
+}
+.refhieu:hover {
+  color: #db4437;
+}

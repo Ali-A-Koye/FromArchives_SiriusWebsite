@@ -1,0 +1,126 @@
+extends base2
+
+block content
+        .arty-breadcrumb
+          .container
+            .row
+              .col-12
+        .arty-pager-area
+          .arty-pager-next
+        section.post-details-area.mb-80
+          .container
+            .row
+              .col-12
+                .post-details-thumb.mb-50
+                  img(src=`/img/bg-img/${opost.coverPhoto}` alt='Picture')
+            .row.justify-content-center
+              .col-12.col-lg-8.col-xl-7
+                .post-details-content
+                  .blog-content
+                    .post-content.mt-0
+                      a.typeColor.cata-sm.green(href=`/Posts?type=${opost.type}`)=opost.type
+                      a.post-title.mb-2=opost.title
+                      .d-flex.justify-content-between.mb-30
+                        .post-meta.d-flex.align-items-center
+                          a.post-author=opost.Author.name.split(' ')[0]
+                          i.fa.fa-circle(aria-hidden='true')
+                          a.post-date=opost.createdAt.toLocaleString('en-us',{day:'numeric',month:'long',year:'numeric'})
+                    p=opost.Postbody.split('\\n')[0]
+                    p
+                    p=opost.Postbody.split('\\n')[1]
+                    p   
+                    p=opost.Postbody.split('\\n')[2]
+                    p
+                    p=opost.Postbody.split('\\n')[3]
+                    p   
+                    p=opost.Postbody.split('\\n')[4]
+                    p
+                    p=opost.Postbody.split('\\n')[5]
+                    p
+                    p=opost.Postbody.split('\\n')[6]
+                    p   
+                    p=opost.Postbody.split('\\n')[7]
+                    p
+                    p=opost.Postbody.split('\\n')[8]
+                    p   
+                    p=opost.Postbody.split('\\n')[9]
+                    p   
+                    p=opost.Postbody.split('\\n')[10]
+                    .comment_area.clearfix.mb-50
+                      .section-heading.style-2
+                        h4 Comment
+                        .line
+                      ul
+                        each review, index in opost.reviews
+                            li.single_comment_area.moreBox(style=`${index<9?"":"display: none;"}`)
+                              .comment-content.d-flex
+                                .comment-author
+                                  a(href=`/users/${review.user._id}`)
+                                    img(src=`/img/users/${review.user.photo}` alt='review')
+                                .comment-meta
+                                  a.comment-date=review.createdAt.toLocaleString('en-us',{day:'numeric',month:'long',year:'numeric'})
+                                  a(href=`/users/${review.user._id}`)
+                                    h6.refhieu=review.user.name
+                                  p=review.review 
+                                  -var one=UserCheck._id;var two=review.user._id;
+                                  -if(two.equals(one))
+                                    .d-flex.align-items-center
+                                      a.like(href='#' id='editcomxd' data-valueOne=`${review.review}` data-x=`${review._id}`) Edit
+                                      a.reply(href='#' id='commentdeleteo' data-xDelete=`${review._id}`) Delete
+                        -if(opost.reviews.length === 0) 
+                            h6(style="text-align:center;")=`There is No Comment 😥😥`
+                      -if(opost.reviews.length !== 0)
+                        button#loadMore.btn(style="display: none;") Load More Comments
+                    .post-a-comment-area(style='display:block;' id='NoLuckdude')
+                      .section-heading.style-2
+                        h4 Leave a Comment!
+                        .line
+                      .contact-form-area
+                        form.msgcomment
+                          .row
+                            .col-12.col-lg-6
+                              input#IDss(type='text' style='display:none;' value=`${opost._id}` disabled='disabled')
+                            .col-12
+                              textarea#messageOne.form-control(name='message' placeholder='Your Comment...')
+                            .col-12
+                              button.btn.arty-btn.mt-30(type='submit') Submit Comment
+                    //----------------------------------------------------------------
+                    .post-a-comment-area(style='display:none;' id='DisplayTimeMan')
+                      .section-heading.style-2
+                        h4 Want to change it? Np! :)
+                        .line
+                      .contact-form-area
+                        form.deathtoprimes
+                          .row
+                            .col-12
+                              textarea#editComOne.form-control(name='message')
+                            .col-12
+                              button.btn.arty-btn.mt-30.commentchanger(type='submit') Change comment
+                      //----------------------------------------------------------------
+                    .post-a-comment-area(style='display:none;' id='DeleteArea')
+                      .section-heading.style-2
+                        h4 are you sure to delete this comment?😥
+                        .line
+                      .contact-form-area
+                        form.deleteform777
+                          .row
+                            .col-12
+                              button.btn.arty-btn.mt-30.commentdeleter(type='submit') Delete Comment
+              .col-12.col-md-6.col-lg-4.col-xl-3
+                .sidebar-area
+                  .single-widget.share-post-widget.mb-50
+                    p Share This Post
+                    a.facebook(href='/')
+                      i.fa.fa-facebook(aria-hidden='true')
+                      |  Facebook
+                    a.twitter(href='/')
+                      i.fa.fa-twitter(aria-hidden='true')
+                      |  Twitter
+                    a.google(href='/')
+                      i.fa.fa-google(aria-hidden='true')
+                      |  Google+
+                  .single-widget.p-0.author-widget
+                    .p-4
+                      img.author-avatar(src=`/img/users/${opost.Author.photo}` alt='')
+                      a.author-name=opost.Author.name
+                      .author-social-info

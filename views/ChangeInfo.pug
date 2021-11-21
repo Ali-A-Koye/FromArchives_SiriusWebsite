@@ -1,0 +1,28 @@
+extends base2
+
+block content
+    .arty-login-area.section-padding-80
+      .container
+        .row.justify-content-center
+          .col-12.col-md-6
+            .login-content
+              .section-heading
+                h4 Want to change some info? Just fill the one you want
+                .line
+              form.changeMaInfo
+                .form-group
+                  h6.mt-2 Name
+                  input#changeName.form-control(type='name' value=`${user.name}` placeholder='Name')
+                  h6.mt-2 Email
+                  input#changeEmail.form-control(type='email' value=`${user.Email}` placeholder='Email Address')
+                  h6.mt-2 Likes
+                  input#changelikesh.form-control(type='likes' value=`${user.likes}` placeholder='Whats Your like?')
+                  h6.mt-2 Bio
+                  textarea#bioh.form-control(name='bio' value=`${user.bio}` cols='30' rows='10')
+                  h6.mt-2 Upload a different Profile Pic 😍?
+                  label.custom-file
+                    span#breffr.custom-file-control.btn.arty-btn.w-20.mt-30 Choose file
+                    h6#ioerjfoerijgoijer
+                    input#photoou.custom-file-input(type='file',accept='image/*',name='photo',style="display:none")
+                  #ultradiv
+                button.btn.arty-btn.w-100.mt-30(type='submit') Change it

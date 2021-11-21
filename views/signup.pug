@@ -1,0 +1,23 @@
+extends base2
+
+block content
+  -if(!user)
+    .arty-login-area.section-padding-80
+      .container
+        .row.justify-content-center
+          .col-12.col-md-6
+            .login-content
+              .section-heading
+                h4 Please Enter Following Information:
+                .line
+              form.signupform
+                .form-group
+                  input#exampleInputName.form-control(type='name' placeholder='Name')
+                  input#exampleInputEmail.form-control(type='email' placeholder='Email Address')
+                .form-group
+                  input#exampleInputPassword1.form-control(type='password' placeholder='Password')
+                  input#PasswordConfirm.form-control(type='password' placeholder='Password Confirm')
+                button.btn.arty-btn.w-100.mt-30(type='submit') Sign Up
+  -else
+    h4.uihiuh=`ops,You Already Have Account ${user.name.split(' ')[0]}!`
+    img#imgo.mx-auto.img-fluid.img-circle.d-block.sss2(src=`/img/bg-img/shoulder.png`)

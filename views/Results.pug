@@ -1,0 +1,59 @@
+extends base2
+
+block content
+    .arty-breadcrumb
+      .container
+        .row
+          .col-12
+            nav(aria-label='breadcrumb')
+
+    .arty-archive-list-posts-area.mb-80
+      .container
+        .row.justify-content-center
+          .col-12.col-lg-8
+            .archive-catagory-view.mb-50.d-flex.align-items-center.justify-content-between
+              .archive-catagory
+                h4(style="font-weight:700;float:right;") Here is Results You Have searched For 🙃🙃
+            -if(ResultPost.length!==0)
+              each post,index in ResultPost
+                  .single-post-area.style-2.moreBox2(style=`${index<9?"":"display: none;"}`)
+                    .row.align-items-center
+                      .col-12.col-md-6
+                        .post-thumbnail
+                          img(src=`img/bg-img/${post.coverPhoto}` alt='picture')
+                      .col-12.col-md-6
+                        .post-content.mt-0
+                          a.typeColor.cata-sm.blue(href=`/Posts?type=${post.type}`)=post.type
+                          a.post-title.mb-2(href=`/page/${post.slug}`)=post.title
+                          .post-meta.d-flex.align-items-center.mb-2
+                            a.post-author=`by ${post.Author.name}`
+                            i.fa.fa-circle(aria-hidden='true')
+                            a.post-date=post.createdAt.toLocaleString('en-us',{day:'numeric',month:'long',year:'numeric'})
+                          p.mb-2
+                            =post.PostContent
+              button#loadMore2.btn(style="display: none;") Load More Resuts
+            -else
+              h4.noresult Sorry no result 
+          .col-12.col-md-6.col-lg-4
+            .sidebar-area
+              .single-widget.latest-video-widget.mb-50
+                .section-heading.style-2.mb-30
+                  h4 Latest added?
+                  .line
+                .single-post-area.mb-30
+                  .post-thumbnail
+                    img(src=`img/bg-img/${Posts[Posts.length - 1].coverPhoto}` alt='')
+                  .post-content
+                    a.typeColor.cata-sm.cata-success(href=`/Posts?type=${Posts[Posts.length - 1].type}`)=Posts[Posts.length - 1].type
+                    a.post-title(href=`/page/${Posts[Posts.length - 1].slug}`)=Posts[Posts.length - 1].title
+              
+              .single-widget.newsletter-widget.mb-50
+                .section-heading.style-2.mb-30
+                  h4 Newsletter
+                  .line
+                p
+                  | Subscribe our newsletter to get notification about new Posts,new Updates... etc..
+                .newsletter-form
+                  form.subemail
+                    input#subemail.form-control.mb-15(type='email' name='nl-email' placeholder='Enter your email')
+                    button.btn.arty-btn.w-100(type='submit') Subscribe

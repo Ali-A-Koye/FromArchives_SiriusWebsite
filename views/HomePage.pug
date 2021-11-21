@@ -1,0 +1,163 @@
+extends base2
+
+block content
+        section.hero--area.section-padding-80
+          .container
+            .row.no-gutters
+              .col-12.col-md-7.col-lg-8
+                  .tab-content.tab-content.twitter-slides.owl-carousel.owl-loaded.owl-drag.ChosenOne
+                    -var x = Posts.length;
+                    #post-1.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='post-1-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-1].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-1].type}`)=Posts[x-1].type
+                          a.post-title(href=`/page/${Posts[x-1].slug}`)=Posts[x-1].title
+                    #post-2.tab-pane.fade.show.owl-stage.items(role='tabpanel' aria-labelledby='post-2-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-2].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-2].type}`)=Posts[x-2].type
+                          a.post-title(href=`/page/${Posts[x-2].slug}`)=Posts[x-2].title
+                    #post-3.tab-pane.fade.show.owl-stage.items(role='tabpanel' aria-labelledby='post-3-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-3].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-3].type}`)=Posts[x-3].type
+                          a.post-title(href=`/page/${Posts[x-3].slug}`)=Posts[x-3].title
+                    #post-4.tab-pane.fade.show.owl-stage.items(role='tabpanel' aria-labelledby='post-4-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-4].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-4].type}`)=Posts[x-4].type
+                          a.post-title(href=`/page/${Posts[x-4].slug}`)=Posts[x-4].title
+                    #post-5.tab-pane.fade.show.owl-stage.items(role='tabpanel' aria-labelledby='post-5-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-5].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-5].type}`)=Posts[x-5].type
+                          a.post-title(href=`/page/${Posts[x-5].slug}`)=Posts[x-5].title
+                    #post-6.tab-pane.fade.show.owl-stage.items(role='tabpanel' aria-labelledby='post-6-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-6].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-6].type}`)=Posts[x-6].type
+                          a.post-title(href=`/page/${Posts[x-6].slug}`)=Posts[x-6].title
+                    #post-7.tab-pane.fade.show.owl-stage.items(role='tabpanel' aria-labelledby='post-7-tab')
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[x-7].coverPhoto});`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[x-7].type}`)=Posts[x-7].type
+                          a.post-title(href=`/page/${Posts[x-7].slug}`)=Posts[x-7].title
+              .col-12.col-md-5.col-lg-4
+                ul.nav.arty-nav-tab(role='tablist')
+                   -var y= Posts.length;
+                    each val in [y-1,y-2,y-3,y-4,y-5,y-6,y-7]
+                      li.nav-item
+                        a.clickedNav.nav-link(href=`/page/${Posts[val].slug}`)
+                          .single-blog-post.style-2.d-flex.align-items-center
+                            .post-thumbnail
+                              img(src=`img/bg-img/${Posts[val].coverPhoto}` alt='Post photo')
+                            .post-content
+                              h6.post-title=Posts[val].title
+        section.trending-posts-area
+          .container
+            .row
+              .col-12
+                .section-heading
+                  h4 Most Viewed Posts
+                  .line
+              .row
+                
+                each val in [1,2,3]
+                  .col-12.col-md-4
+                    .single-post-area.mb-80
+                      .post-thumbnail
+                        img(src=`img/bg-img/${Posts[val].coverPhoto}` alt='')
+                      .post-content
+                        a.typeColor.cata-sm.Yellow(href=`/Posts?type=${Posts[val].type}`)=Posts[val].type
+                        a.post-title(href=`/page/${Posts[val].slug}`)=Posts[val].title
+        section.arty-post-area.mb-50
+          .container
+            .row
+              .col-12.col-md-7.col-lg-8
+                .all-posts-area
+                  .section-heading.style-2
+                    h4 More Posts
+                    .line
+                  .featured-post-slides.owl-carousel.mb-30
+                   - var n = Posts.length-8;
+                    while n>=0
+                      .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${Posts[n].coverPhoto})`)
+                        .post-content
+                          a.typeColor(href=`/Posts?type=${Posts[n].type}`)=Posts[n].type
+                          a.post-title(href=`/page/${Posts[n].slug}`)=Posts[n].title
+                      -n--;
+                  .row
+                    .col-12.col-md-6
+                      .single-post-area.mb-80
+                        .post-thumbnail
+                          img(src=`img/bg-img/${Posts[Posts.length-8].coverPhoto}` alt='picture')
+                        .post-content
+                          a.typeColor.cata-sm.purple(href=`/Posts?type=${Posts[Posts.length-8].type}`)=Posts[Posts.length-8].type
+                          a.post-title(href=`/page/${Posts[Posts.length-8].slug}`)=Posts[Posts.length-8].title
+                    .col-12.col-md-6
+                      .single-post-area.mb-80
+                        .post-thumbnail
+                          img(src=`img/bg-img/${Posts[Posts.length-9].coverPhoto}` alt='picture')
+                        .post-content
+                          a.typeColor.cata-sm.cata-primary(href=`/Posts?type=${Posts[Posts.length-9].type}`)=Posts[Posts.length-9].type
+                          a.post-title(href=`/page/${Posts[Posts.length-9].slug}`)=Posts[Posts.length-9].title
+                  .row.mb-30
+                    - var x = 4;
+                    while x>=1
+                      .col-12.col-lg-6
+                        .single-blog-post.style-3.d-flex.mb-50
+                          .post-thumbnail
+                            img(src=`img/bg-img/${Posts[x].coverPhoto}` alt='')
+                          .post-content
+                            a.post-title(href=`/page/${Posts[x].slug}`)=Posts[x].title
+                      -x--;
+                 
+
+
+
+                    
+                  .section-heading.style-2
+                    h4 Latest World News?
+                    .line
+                  .featured-post-slides.owl-carousel.mb-30
+                    .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${News[News.length-1].coverPhoto});`)
+                      .post-content
+                        a.typeColor(style="color: white;")=News[News.length-1].type
+                        a.post-title(href=`${News[News.length-1].url}`)=News[News.length-1].title
+                    .single-feature-post.video-post.bg-img(style=`background-image: url(img/bg-img/${News[News.length-2].coverPhoto});`)
+                      .post-content
+                        a.typeColor(style="color: white;")=News[News.length-2].type
+                        a.post-title(href=`${News[News.length-2].url}`)=News[News.length-2].title
+                  -var j=News.length-2;
+                  while j>=0
+                    .single-post-area.mb-30
+                      .row.align-items-center
+                        .col-12.col-lg-6
+                          .post-thumbnail
+                            img(src=`img/bg-img/${News[j].coverPhoto}` alt='')
+                        .col-12.col-lg-6
+                          .post-content.mt-0
+                            a.typeColor(style="color: white;")=News[j].type
+                            a.post-title.mb-2(href=`${News[j].url}`)=News[j].title
+                            .post-meta.d-flex.align-items-center.mb-2
+                              a.post-author=News[j].Author
+                              i.fa.fa-circle(aria-hidden='true')
+                              a.post-date=News[j].createdAt.toLocaleString('en-us',{day:'numeric',month:'long',year:'numeric'})
+                            p.mb-2
+                              =News[j].PostContent
+                    -j--;
+              .col-12.col-md-5.col-lg-4
+                .sidebar-area
+                  .single-widget.add-widget.mb-50
+                    a(href='#')
+                      //-img(src='img/bg-img/add.png' alt='')
+                  .single-widget.newsletter-widget.mb-50
+                    .section-heading.style-2.mb-30
+                      h4 Newsletter
+                      .line
+                    p
+                      | Subscribe our newsletter to get notification about new Posts,new Updates... etc.
+                    .newsletter-form
+                      form.subemail
+                        input#subemail.form-control.mb-15(type='email' name='nl-email' placeholder='Enter your email')
+                        button.btn.arty-btn.w-100(type='submit') Subscribe

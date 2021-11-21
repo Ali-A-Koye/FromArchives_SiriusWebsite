@@ -1,0 +1,16 @@
+extends base2
+
+block content
+    h4.h4welcome=`${user.name.split(" ")[0]},Welcome to Global Chat`
+    h5.h5talk Talk-Be respectful-Enjoy
+    #message-container
+        #message-cont
+            #Chatfield
+                #send-ddcontainer(data-name=`${user.name}` data-photo=`${user.photo}` data-ids=`${user._id}`)
+                    h6.h6header(style="text-align: center")| Right now there is 
+                        span#counter(style='color:red;')
+                        |  online
+
+            form#send-container
+              input#message-input(type='text' maxlength="100" minlength="0")
+              button#send-button.btn.arty-btn.btrwnecwo(type='submit' placeholder="Write your message") Send

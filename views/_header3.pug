@@ -1,0 +1,63 @@
+
+// ##### Header Area Start #####
+header.header-area
+  #sticker.arty-main-menu
+    .classy-nav-container.breakpoint-off
+      .container
+        // Menu
+        nav#artyNav.classy-navbar.justify-content-between
+          // Nav brand
+          a.nav-brand(href='/')
+            img(src='/img/core-img/logo.png' alt='logo' width='200px' height='500px')
+          // Navbar Toggler
+          .classy-navbar-toggler
+            span.navbarToggler
+              span
+              span
+              span
+          .classy-menu
+            // Close Button
+            .classycloseIcon
+              .cross-wrap
+                span.top
+                span.bottom
+            // Nav Start
+            .classynav
+              ul
+                li(class=`${requrl=="/"? 'active':''}`)
+                  a(href='/') Home
+                li(class=`${requrl=="/Posts"? 'active':''}`)
+                  a(href='/Posts') Archives
+                li
+                  a(href='#') Fields
+                  ul.dropdown
+                    li
+                      a(href='/Posts?type=Chemistry') - chemistry
+                    li
+                      a(href='/Posts?type=Physics') - Physics
+                    li
+                      a(href='/Posts?type=Biology') - Biology 
+                    li
+                      a(href='/Posts?type=Geology') - Geology
+                    li
+                      a(href='/Posts?type=Mathematics') - Mathematics
+                    li
+                      a(href='/Posts?type=Computer') - Computer
+                li(class=`${requrl=="/contact"? 'active':''}`)
+                  a(href='/contact') Contact
+                if user
+                  li
+                    a(href='#') Account
+                    ul.dropdown
+                      li
+                        a(href='/me') - Profile
+                      li
+                        a(href='/Posts?type=Physics') - Join Global Chat!
+                      li
+                        a(href='/changeinfo') - Change Info 
+                      li
+                        a(href='/changePassword') - Change Password
+                      li
+                        a.nav__el--logout(href='/') - Log out
+            // Nav End
+// ##### Header Area End #####

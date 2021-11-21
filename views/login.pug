@@ -1,0 +1,31 @@
+extends base2
+
+block content
+  -if(!user)
+      .arty-login-area.section-padding-80
+        .container
+          .row.justify-content-center
+            .col-12.col-md-6
+              .login-content
+                .section-heading
+                  h4 Great to have you back!
+                  .line
+                form.loginform
+                  .form-group
+                    input#InputEmail1.form-control(type='email' placeholder='Please Enter your email')
+                  .form-group
+                    input#InputPassword1.form-control(type='password' placeholder='Please Enter your Password')
+                  .form-group
+                    .custom-control.custom-checkbox.mr-sm-2
+                      input#customControlAutosizing.custom-control-input(type='checkbox')
+                      p(style="float: left;")
+                        | Don&apos;t have account? 
+                        a.SignUpHere(href='/signup')  Sign Up Here
+                      p(style="float: right;")
+                        | Forgot password? 
+                        a.SignUpHere(href='/forgotpassword') Reset Password Here
+                      label.custom-control-label(for='customControlAutosizing') Remember me
+                  button.btn.arty-btn.w-100.mt-30(type='submit') Log In
+  -else
+    h4.uihiuh=`ops,You Are Already Logged In ${user.name.split(' ')[0]}!`
+    img#imgo.mx-auto.img-fluid.img-circle.d-block.sss2(src=`/img/bg-img/shoulder.png`)
